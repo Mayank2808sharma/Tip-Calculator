@@ -41,7 +41,7 @@ const calculateBill = () => {
   // calculate the total (tip amount + bill)
   let totaltoPay = total +totalTip;
   // calculate the per person total (total divided by number of people)
-  totaltoPay = totaltoPay/totalPeople;
+  totaltoPay = (totaltoPay/totalPeople).toFixed(2);
   // update the perPersonTotal on DOM & show it to user
   perPersonTotal.innerText = totaltoPay;
 }
@@ -63,6 +63,7 @@ const decreasePeople = () => {
   // if amount is 1 or less simply return
   // (a.k.a you can't decrease the number of people to 0 or negative!)
   if(totalPeople<=1){
+    alert("Hey you cannot have less than 1 person  !!!!");
     return;
   }
   // decrement the amount of people
